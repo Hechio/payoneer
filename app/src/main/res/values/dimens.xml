@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_medium">20sp</dimen>
+    <dimen name="margin_small">10dp</dimen>
+    <dimen name="text_small">14sp</dimen>
+    <dimen name="small">5dp</dimen>
+    <dimen name="smaller">2dp</dimen>
+    <dimen name="margin_large">50dp</dimen>
+    <dimen name="smallest">1dp</dimen>
+    <dimen name="margin_small_20dp">20dp</dimen>
+    <dimen name="small_progress">25dp</dimen>
+</resources>
