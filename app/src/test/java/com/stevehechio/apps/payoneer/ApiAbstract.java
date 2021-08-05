@@ -2,14 +2,10 @@ package com.stevehechio.apps.payoneer;
 
 import org.junit.After;
 import org.junit.Before;
-import org.junit.runner.RunWith;
-import org.junit.runners.JUnit4;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
-import java.util.Collections;
-import java.util.Map;
 import java.util.Objects;
 
 import okhttp3.mockwebserver.MockResponse;
@@ -25,7 +21,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by stevehechio on 8/5/21
  */
 
-@RunWith(JUnit4.class)
+
 public class ApiAbstract<T> {
     private MockWebServer mockWebServer;
 

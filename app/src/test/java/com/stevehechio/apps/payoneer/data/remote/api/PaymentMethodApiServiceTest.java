@@ -9,12 +9,15 @@ import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import java.io.IOException;
 
 /**
  * Created by stevehechio on 8/5/21
  */
+@RunWith(JUnit4.class)
 public class PaymentMethodApiServiceTest extends ApiAbstract<PaymentMethodApiService> {
 
     private PaymentMethodApiService apiService;
