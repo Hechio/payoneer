@@ -42,11 +42,7 @@ public class PaymentMethodRepository {
             @NonNull
             @Override
             protected Flowable<List<PaymentMethodEntity>> loadFromDb() {
-                List<PaymentMethodEntity> paymentMethodEntities = paymentMethodDao.getAllPaymentMethods();
-                if (paymentMethodEntities == null || paymentMethodEntities.isEmpty()){
-                    return Flowable.empty();
-                }
-                return Flowable.just(paymentMethodEntities);
+                return  paymentMethodDao.getAllPaymentMethods();
             }
 
             @Override
@@ -59,8 +55,7 @@ public class PaymentMethodRepository {
             protected Observable<Resource<PaymentMethodApiResponse>> createCall() {
                 return paymentMethodApiService.fetchPaymentMethods()
                         .flatMap(response ->
-                                Observable.just(response == null ? Resource.error("Something went wrong",
-                                        new PaymentMethodApiResponse()) : Resource.success(response)));
+                                Observable.just(Resource.success(response)));
             }
         }.getAsObservable();
     }

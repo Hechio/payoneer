@@ -2,6 +2,7 @@ package com.stevehechio.apps.payoneer.data.local.entities;
 
 import androidx.annotation.NonNull;
 import androidx.room.Entity;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
 import androidx.room.TypeConverters;
 
@@ -16,7 +17,7 @@ import java.io.Serializable;
  */
 
 
-@Entity()
+@Entity(indices = {@Index(value = {"code"}, unique = true)})
 public class PaymentMethodEntity implements Serializable {
 
     @PrimaryKey(autoGenerate = true)

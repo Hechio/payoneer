@@ -9,6 +9,8 @@ import com.stevehechio.apps.payoneer.data.local.entities.PaymentMethodEntity;
 
 import java.util.List;
 
+import io.reactivex.Flowable;
+
 /**
  * Created by stevehechio on 8/3/21
  */
@@ -18,5 +20,5 @@ public interface PaymentMethodDao {
     long[] insertPaymentMethod(List<PaymentMethodEntity> paymentMethods);
 
     @Query("SELECT * FROM `PaymentMethodEntity`")
-    List<PaymentMethodEntity> getAllPaymentMethods();
+    Flowable<List<PaymentMethodEntity>> getAllPaymentMethods();
 }

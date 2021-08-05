@@ -24,7 +24,7 @@ public abstract class NetworkBoundResource<ResultType, RequestType> {
                 .flatMap(apiResponse -> loadFromDb().toObservable().map(Resource::success))
                 .doOnError(throwable -> onFetchFailed())
                 .onErrorResumeNext(throwable -> {
-                    return loadFromDb().toObservable().map(data -> Resource.error(throwable.getMessage(),data));
+                    return loadFromDb().toObservable().map(data -> Resource.error(throwable.getLocalizedMessage(),data));
                 }).observeOn(AndroidSchedulers.mainThread());
         }else {
             source = loadFromDb().toObservable().map(Resource::success);

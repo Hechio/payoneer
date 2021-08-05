@@ -1,7 +1,5 @@
 package com.stevehechio.apps.payoneer.ui.viewmodel;
 
-import android.annotation.SuppressLint;
-
 import androidx.lifecycle.MutableLiveData;
 
 import com.stevehechio.apps.payoneer.data.Resource;
@@ -19,8 +17,8 @@ import javax.inject.Inject;
  * Created by stevehechio on 8/3/21
  */
 public class PaymentMethodViewModel extends BaseViewModel {
-    private PaymentMethodRepository paymentMethodRepository;
-    private MutableLiveData<Resource<List<PaymentMethodEntity>>> paymentMethodLiveDate = new MutableLiveData<>();
+    private final PaymentMethodRepository paymentMethodRepository;
+    private final MutableLiveData<Resource<List<PaymentMethodEntity>>> paymentMethodLiveDate = new MutableLiveData<>();
 
     //inject PaymentMethodDao and PaymentApiService classes to this viewModel
 
@@ -31,9 +29,9 @@ public class PaymentMethodViewModel extends BaseViewModel {
     }
 
     public void loadPaymentMethods(){
-        paymentMethodRepository.loadPaymentMethods()
-                .doOnSubscribe(disposable -> addToDisposable(disposable))
-                .subscribe(resource -> getPaymentMethodLiveDate().postValue(resource));
+        addToDisposable( paymentMethodRepository.loadPaymentMethods()
+                .subscribe(resource -> getPaymentMethodLiveDate().postValue(resource)));
+
     }
 
     public MutableLiveData<Resource<List<PaymentMethodEntity>>> getPaymentMethodLiveDate() {

@@ -1,17 +1,20 @@
 package com.stevehechio.apps.payoneer.ui.activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.os.Bundle;
 import android.view.View;
 
+import com.stevehechio.apps.payoneer.R;
 import com.stevehechio.apps.payoneer.data.local.entities.PaymentMethodEntity;
 import com.stevehechio.apps.payoneer.databinding.ActivityMainBinding;
 import com.stevehechio.apps.payoneer.factory.ViewModelFactory;
 import com.stevehechio.apps.payoneer.ui.adapter.PaymentMethodsAdapter;
 import com.stevehechio.apps.payoneer.ui.viewmodel.PaymentMethodViewModel;
+import com.stevehechio.apps.payoneer.utils.NetworkUtils;
 
 import java.util.List;
 
@@ -48,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setUpViewModel() {
-    paymentMethodViewModel = ViewModelProviders.of(this,viewModelFactory)
+    paymentMethodViewModel = new ViewModelProvider(this,viewModelFactory)
             .get(PaymentMethodViewModel.class);
     paymentMethodViewModel.getPaymentMethodLiveDate().observe(this, response ->{
         if (response.isLoading()){
@@ -67,6 +70,11 @@ public class MainActivity extends AppCompatActivity {
         binding.tvInfo.setVisibility(View.VISIBLE);
         binding.rvPayMethods.setVisibility(View.GONE);
         binding.tvInfo.setText(message);
+        if (!NetworkUtils.isNetworkAvailable(getApplicationContext())){
+            binding.tvInfo.setText(getString(R.string.please_check_your_network));
+        }else {
+            binding.tvInfo.setText(message);
+        }
     }
 
     private void onShowData(List<PaymentMethodEntity> data) {

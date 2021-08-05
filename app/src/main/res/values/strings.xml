@@ -2,4 +2,5 @@
     <string name="app_name">Payoneer</string>
     <string name="payment_methods">Payment methods</string>
     <string name="something_went_wrong">Something went wrong</string>
+    <string name="please_check_your_network">These seems to be a problem with your network connection. Please make sure you have access to internet.</string>
 </resources>

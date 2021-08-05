@@ -9,7 +9,7 @@ import io.reactivex.disposables.Disposable;
  * Created by stevehechio on 8/3/21
  */
 public class BaseViewModel extends ViewModel {
-    private CompositeDisposable compositeDisposable = new CompositeDisposable();
+    private final CompositeDisposable compositeDisposable = new CompositeDisposable();
 
     protected void addToDisposable(Disposable disposable){
         compositeDisposable.remove(disposable);
@@ -19,5 +19,11 @@ public class BaseViewModel extends ViewModel {
 
     public void onStop(){
         compositeDisposable.clear();
+    }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
+        onStop();
     }
 }
