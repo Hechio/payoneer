@@ -12,7 +12,7 @@ This is take way assigment for Payoneer recruitment process.
 - [Architecture](#architecture)
 - [Testing](#testing)
 - [ScreenShots](#screenshots)
-- [Libraries](#libraries)
+- [Sample App and Source Code](#sampleappandsourcecode)
 
 ## Prerequisite
 
@@ -68,5 +68,10 @@ Libraries used in the whole application are:
 - [MockWebServer](https://github.com/square/okhttp/tree/master/mockwebserver) - A scriptable web server for testing HTTP clients
 - [Glide](https://github.com/bumptech/glide) - Media management and image loading framework for Android
 
+## Sample App and Source Code
 
+[Sample.App](https://drive.google.com/file/d/1thBIMv_iKiMHpq0gNiEkTk3p0NtIZYM6/view?usp=sharing) - Get APK debug app
+<p><a href="https://drive.google.com/file/d/1thBIMv_iKiMHpq0gNiEkTk3p0NtIZYM6/view?usp=sharing"><img width="150" alt="Get it on Google Drive" src="https://user-images.githubusercontent.com/47601553/128481494-a5347b33-cc5f-4a2a-8d2a-7fc5f6acd41b.jpg" data-canonical-src="https://storage.googleapis.com/gweb-uniblog-publish-prod/images/Google_Drive.max-1100x1100.png" style="max-width:100%;"></a></p>
+
+[Source.Code](https://github.com/Hechio/payoneer) - Access to the project's github reporitory
 
