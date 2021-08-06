@@ -1,7 +1,14 @@
 package com.stevehechio.apps.payoneer;
 
+import com.stevehechio.apps.payoneer.data.local.entities.PaymentMethodEntity;
+import com.stevehechio.apps.payoneer.data.remote.api.PaymentMethodApiService;
+
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.junit.runners.JUnit4;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -21,7 +28,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
  * Created by stevehechio on 8/5/21
  */
 
-
+@RunWith(JUnit4.class)
 public class ApiAbstract<T> {
     private MockWebServer mockWebServer;
 
@@ -54,6 +61,11 @@ public class ApiAbstract<T> {
     @After
     public void closeServer() throws IOException {
         mockWebServer.shutdown();
+    }
+
+    @Test
+    public void sampleTest(){
+        Assert.assertEquals("AMEX","AMEX");
     }
 
 }
