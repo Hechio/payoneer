@@ -61,7 +61,7 @@ Libraries used in the whole application are:
 
 - [Viewmodel](https://developer.android.com/topic/libraries/architecture/viewmodel) - Manage UI related data in a lifecycle conscious way 
 - [Room](https://developer.android.com/training/data-storage/room) - Provides abstraction layer over SQLite
-- [kotlinx.coroutines](https://github.com/ReactiveX/RxJava) - RxJava is a Java VM implementation of Reactive Extensions: a library for composing asynchronous and event-based programs by using observable sequences.
+- [RxJava](https://github.com/ReactiveX/RxJava) - RxJava is a Java VM implementation of Reactive Extensions: a library for composing asynchronous and event-based programs by using observable sequences.
 - [Dagger2](https://dagger.dev/dev-guide/) - Used for Dependency injection
 - [Retrofit](https://square.github.io/retrofit/) - Turns your HTTP API into a Java interface.
 - [Mockito](https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html) - Enables mock creation, verification and stubbing for testing
