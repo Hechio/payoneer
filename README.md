@@ -1,9 +1,4 @@
 
-# Payoneer
-
-<img src="https://user-images.githubusercontent.com/47601553/128331873-dfefd10e-6cf5-49f5-826a-3d9a0309ded2.jpg" width="500" style="max-width:100%;">
-
-This is take way assigment for Payoneer recruitment process.
 
 ## Table of Contents
 
